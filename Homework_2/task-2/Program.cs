@@ -21,7 +21,7 @@ int checking_for_a_number(string t_num)
 }
 int[] number_length(int num) 
 {
-    num = Math.Abs(num);
+ // num = Math.Abs(num);
     List<int> numbers = new List<int>();
     while (num > 0)
     {
@@ -32,13 +32,17 @@ int[] number_length(int num)
     return numbers.ToArray();
  
 }
+void print()
+{
+    Console.WriteLine("Некорректные данные");
+}
 
-Console.Write("Введите число: ");
+Console.Write("Введите положительное целое число: ");
 string t_num = Console.ReadLine();
 
 if (checking_for_a_number(t_num) == -1)
 {
-    Console.WriteLine("Некоректные данные");
+    print();
 }
 else
 {
@@ -49,3 +53,14 @@ else
     else 
         Console.WriteLine("Третьей цифры нет");
 }
+
+/*
+ Павел подскажите, (предполагаю не корректности написания)
+делаю проверку на ввод числа в методе "checking_for_a_number", если ложь возвращает "-1" 
+и мне приходится основной код загонять в условие. Как лучьше воспользоваться "-1" или вобще делать проверку не через TryParse?
+
+и можно в методе ссылаться на другой метод?
+
+По задаче работает но много "НО" 
+описать в цикл при вводе одго и двух значного числа и некорректности ввода(символов), чтобы выдовал заного ввод
+ */
