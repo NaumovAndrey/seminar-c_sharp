@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// метод. Ничего не принимает и ни чего не выдаёт:
+
+void metod()
+{
+    Console.WriteLine("message");
+}
+
+metod();
