@@ -8,7 +8,7 @@ class Program
 {
     static int numbers(string us_n)
     {
-        Console.WriteLine(us_n);
+        Console.Write(us_n);
         string t_num = Console.ReadLine();
         int num = Convert.ToInt32(t_num);
         return num;
@@ -25,20 +25,23 @@ class Program
         numbers.Reverse();
         return numbers.ToArray();
     }
-
-    static void print_no()
+    static int[] oddR(int num)
     {
-        Console.WriteLine("NO");
+        num = Math.Abs(num);
+        List<int> numbers = new List<int>();
+        while (num > 0)
+        {
+            numbers.Add(num % 10);
+            num /= 10;
+        }
+        return numbers.ToArray();
     }
-    static void print_yes(int[] oddm)
+    static void print(int[] oddm, int[] oddr)
     {
-        List<int> odd_revers = new List<int>();
-        odd_revers() = oddm();
-        odd_revers.Reverse();
         bool temp = true;
         for (int i = 0; i < oddm.Length; i++)
         {
-            if (oddm[i] != odd_revers[i])
+            if (oddm[i] != oddr[i])
             {
                 temp = false;
                 break;
@@ -46,16 +49,20 @@ class Program
          }
         if (temp == false)
         {
-            Console.WriteLine("No");
+            Console.WriteLine("NO");
         }
         else Console.WriteLine("Yes");
     }
-
     static void Main(string[] args)
     {
-        int us_num = numbers("enter a number: ");
-        int[] oddM = odd(us_num);
-         Console.WriteLine(oddM.Count); // счётчик колличества, ещё не реалицован
-        print_yes(oddM());
+        int us_num = numbers("Enter a number: ");   // обращение к методу, ввод с склавиатуры
+        int[] oddM = odd(us_num);                   // обращение к методу, расбиваю число на состовляющие
+        int[] oddr = oddR(us_num);                  // обращение к методу, тоже самое, тольео в обратном порядке. Незнаю как переварачивать лист, приходится дублировать метод. Потеря времени!
+        int count = oddr.Length;                    // подсчет количества элементов в массиве
+        if (count % 2 == 1)                         // если не четное, идём дальше иначе выход
+        {
+            print(oddM, oddr);
+        }
+        else Console.WriteLine("A number cannot be a palindrome");
     }
 }
