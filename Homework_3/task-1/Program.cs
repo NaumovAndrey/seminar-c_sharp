@@ -58,11 +58,6 @@ class Program
         int us_num = numbers("Enter a number: ");   // обращение к методу, ввод с склавиатуры
         int[] oddM = odd(us_num);                   // обращение к методу, расбиваю число на состовляющие
         int[] oddr = oddR(us_num);                  // обращение к методу, тоже самое, тольео в обратном порядке. Незнаю как переварачивать лист, приходится дублировать метод. Потеря времени!
-        int count = oddr.Length;                    // подсчет количества элементов в массиве
-        if (count % 2 == 1)                         // если не четное, идём дальше иначе выход
-        {
-            print(oddM, oddr);
-        }
-        else Console.WriteLine("A number cannot be a palindrome");
+        print(oddM, oddr);
     }
 }
