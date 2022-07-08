@@ -37,7 +37,7 @@ class Program
     {
         try
         {
-            int nums = userNum("Введите положительное целое число: ");                        // Ввод от пользователя
+            int nums = userNum("Введите положительное целое число: ");          // Ввод от пользователя
             int[] arrNumbers = arrNum(nums);                                    // Разбиваем число в список
             int count = arrSum(arrNumbers);                                     // считаем сумму кол элементов списка
             Console.WriteLine("Сумма цифр в числе " + nums + " = " + count);    // Вывод в консоль
