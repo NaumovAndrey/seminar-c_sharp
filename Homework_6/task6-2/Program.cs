@@ -8,15 +8,31 @@ double UserNum(string text)
     Console.Write(text);
     return Convert.ToDouble(Console.ReadLine());
 }
-Double IntersectionsLines(double b1, double k1, double b2, double k2)
+Double[] IntersectionsLines(double b1, double k1, double b2, double k2)
 {
-    return (b2 - b1) / (k1 - k2);
+    double[] doubles = new double[2];
+    double x = (b2 - b1) / (k1 - k2);
+    doubles[0] = x;
+    double y = k2 * x + b2;
+    doubles[1] = y;
+    return doubles;
+}
+void ShowArray(double[] array)
+{
+    string mas = string.Empty;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i == array.Length - 1) { mas = mas + array[i]; }
+        else { mas = mas + array[i] + " "; }
+    }
+    Console.WriteLine(mas);
 }
 
-double b1 = UserNum("Введите первую точку прямой AB: ");
-double k1 = UserNum("Введите вторую точку прямой AB: ");
-double b2 = UserNum("Введите первую точку прямой CD: ");
-double k2 = UserNum("Введите вторую точку прямой CD: ");
-double x = IntersectionsLines(b1, k1, b2, k2);
-Console.WriteLine(x);
+double b1 = UserNum("b1: ");
+double k1 = UserNum("k1: ");
+double b2 = UserNum("b2: ");
+double k2 = UserNum("k2: ");
+double[] xy = IntersectionsLines(b1, k1, b2, k2);
+ShowArray(xy);
 
+// без проверок прямых
