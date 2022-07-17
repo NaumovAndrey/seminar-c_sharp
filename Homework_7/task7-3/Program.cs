@@ -17,11 +17,15 @@ for (int i = 0; i < data.GetLength(0); i++) {
     }
     Console.WriteLine();
 }
-double[] sum = new double[data.GetLength(0)];
+//double[] sum = new double[data.GetLength(0)];
 for (int i = 0; i < data.GetLength(0); i++) {
-    sum[i] = 0;
+//  sum[i] = 0;
+    double sum = 0;//
     for (int j = 0; j < data.GetLength(1); j++){
-        sum[i] += data[j, i];
+//      sum[i] += data[j, i];
+        sum = sum + data[j, i];
     }
-    Console.Write("[" + Math.Round(sum[i] / data.GetLength(1),2) + "]" + " ");
+//  Console.Write("[" + Math.Round(sum[i] / data.GetLength(1),2) + "]" + " ");
+    sum /= data.GetLength(1);
+    Console.Write("[" + Math.Round(sum, 2) + "]" + " ");
 }
