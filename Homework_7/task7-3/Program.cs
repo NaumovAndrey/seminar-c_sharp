@@ -7,8 +7,8 @@
 */
 
 int meaningLines, meaningColumns;
-int line = new Random().Next(3, 4);
-int column = new Random().Next(3, 4);
+int line = new Random().Next(3, 9);
+int column = new Random().Next(3, 9);
 int[,] data = new int[line, column];
 for (int i = 0; i < data.GetLength(0); i++) {
     for (int j = 0; j < data.GetLength(1); j++){ 
