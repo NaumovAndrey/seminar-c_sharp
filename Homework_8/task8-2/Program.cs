@@ -44,3 +44,6 @@ Print(newArray);
 int[,] arrangeValues = ArrangeValues(newArray);
 Console.WriteLine();
 Print(arrangeValues);
+
+//Вопрос! Почему если 43ю строку поставить после 45й. На выводе два массива уже отсортированные?
+//(имена же переменных разные, которые идут на печать)
