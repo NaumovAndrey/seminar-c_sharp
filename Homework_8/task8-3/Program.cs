@@ -8,8 +8,8 @@
 */
 
 int[,] NewArray() {
-    int line = 4;
-    int col = 5;
+    int line = new Random().Next(2, 10);
+    int col = new Random().Next(2, 10);
     int[,] array = new int[line, col];
     for (int i = 0; i < line; i++) {
         for (int j = 0; j < col; j++) {
@@ -41,7 +41,7 @@ int MinLineArray(int[,] array) {
         int temp = ints[k];
         if (num > temp) { 
             num = temp;
-            indexMinSum = k;
+            indexMinSum = k + 1;
         }
     }
     return indexMinSum;
@@ -50,4 +50,4 @@ int MinLineArray(int[,] array) {
 int[,] array = NewArray();
 Print(array);
 int minLine = MinLineArray(array);
-Console.WriteLine(minLine + 1 + " Строка наименьшая в массиве");
+Console.WriteLine(minLine  + " cтрока наименьшая в массиве");
